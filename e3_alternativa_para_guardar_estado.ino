@@ -1,13 +1,17 @@
+int led = 11;
+
 int boton = 8;
 int estadoBoton = 0;
-int led = 11;
+
+int estado = 0;
 
 void setup() {
   
   pinMode(led, OUTPUT);
-  pinMode(boton, INPUT); 
+  pinMode(boton, INPUT);
   
 }
+
 
 void loop() {
   
@@ -15,15 +19,11 @@ void loop() {
   
   if (estadoBoton == 1) {
     
-    digitalWrite(led, HIGH);
-    delay(300);
-    digitalWrite(led, LOW);
-    delay(300);
+    digitalWrite(led, !digitalRead(led));
     
-  } else {
+    delay(200);
     
-    digitalWrite(led, LOW);
-  
   }
+   
   
 }
